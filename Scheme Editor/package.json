@@ -1,0 +1,16 @@
+{
+  "name": "scheme-card-editor",
+  "version": "1.0.0",
+  "description": "Custom card image generator",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "npx serve"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "serve": "^14.2.0"
+  }
+}
+
+

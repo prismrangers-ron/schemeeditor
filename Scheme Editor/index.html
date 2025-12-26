@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheme Card Editor</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="top-header">
+    <div class="header-container">
+      <h1 class="header-title">SCHEME CARD EDITOR</h1>
+      <p class="header-tagline">Create your custom scheme card in seconds</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Main Content -->
+    <main class="main-layout">
+      <!-- Preview Section -->
+      <section class="preview-section">
+        <div class="preview-container">
+          <canvas id="cardCanvas" width="744" height="1039"></canvas>
+        </div>
+      </section>
+
+      <!-- Controls Section -->
+      <section class="controls-section">
+        <!-- Upload Zone -->
+        <div class="card">
+          <h3>Upload Image</h3>
+          <div class="upload-zone" id="uploadZone">
+            <input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp" hidden>
+            <div class="upload-content">
+              <span class="upload-icon">🖼️</span>
+              <p>Drag & drop your image here</p>
+              <p class="upload-hint">or click to browse</p>
+            </div>
+          </div>
+          
+          <!-- Image Adjustment Controls -->
+          <div id="imageControls" class="image-controls" style="display: none;">
+            <div class="controls-header">
+              <h4>Adjust Image</h4>
+              <button type="button" id="resetImage" class="btn-reset">Reset</button>
+            </div>
+            <div class="slider-group">
+              <label>Zoom: <span id="zoomValue">1.0x</span></label>
+              <input type="range" id="zoomSlider" min="0.5" max="3" step="0.1" value="1">
+            </div>
+            <div class="slider-group">
+              <label>Position X</label>
+              <input type="range" id="xSlider" min="-200" max="200" step="5" value="0">
+            </div>
+            <div class="slider-group">
+              <label>Position Y</label>
+              <input type="range" id="ySlider" min="-200" max="200" step="5" value="0">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Inputs -->
+        <div class="card">
+          <div class="input-group">
+            <label for="cardName">Card Name</label>
+            <input type="text" id="cardName" class="input-field" maxlength="25" placeholder="Enter card name...">
+            <span class="char-counter"><span id="nameCount">0</span>/25</span>
+          </div>
+
+          <div class="input-group">
+            <label for="cardDescription">Description</label>
+            <textarea id="cardDescription" class="textarea" maxlength="100" rows="3" placeholder="Enter card description..."></textarea>
+            <span class="char-counter"><span id="descCount">0</span>/100</span>
+          </div>
+        </div>
+
+        <!-- Download Buttons -->
+        <div class="card download-section">
+          <h3>Download Your Card</h3>
+          <div class="download-buttons">
+            <button id="downloadJpg" class="btn btn-primary">
+              📥 Download JPG
+            </button>
+            <button id="downloadPng" class="btn btn-secondary">
+              📥 Download PNG
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Scheme Card Editor © 2025</p>
+    </footer>
+  </div>
+
+  <script src="/dist/app.js"></script>
+</body>
+</html>
+
